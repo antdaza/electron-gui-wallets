@@ -33,7 +33,7 @@
 
         <p class="q-my-sm">Wallet Version: v{{ version }}</p>
         <p class="q-my-sm">Daemon Version: v{{ daemonVersion }}</p>
-        <p class="q-my-sm">Copyright (c) 2018-2021, Oxen</p>
+        <p class="q-my-sm">Copyright (c) 2018-2021, Antd</p>
         <p class="q-my-sm">Copyright (c) 2018, Ryo Currency Project</p>
         <p class="q-my-sm">All rights reserved.</p>
 
@@ -44,7 +44,7 @@
             >
           </p>
           <p>
-            <a href="#" @click="openExternal('https://t.me/Oxen_Community')"
+            <a href="#" @click="openExternal('https://t.me/Antd_Community')"
               >Telegram</a
             >
             -

@@ -390,9 +390,9 @@ export class Daemon {
 
     clearInterval(this.fullNodeHeartbeat);
     this.fullNodeHeartbeat = setInterval(() => {
-      this.updateServiceNodes();
+      this.updateFullNodes();
     }, 5 * 60 * 1000); // 5 minutes
-    this.updateServiceNodes();
+    this.updateFullNodes();
   }
 
   heartbeatAction() {
@@ -467,7 +467,7 @@ export class Daemon {
     });
   }
 
-  updateServiceNodes() {
+  updateFullNodes() {
     const full_nodes = {
       fetching: true
     };

@@ -10,7 +10,7 @@
         }}</span>
       </div>
       <div v-if="full_nodes">
-        <ServiceNodeList
+        <FullNodeList
           :full-nodes="full_nodes"
           button-i18n="buttons.unlock"
           :details="details"
@@ -23,7 +23,7 @@
       >
         <q-spinner color="primary" size="30" />
       </q-inner-loading>
-      <ServiceNodeDetails
+      <FullNodeDetails
         ref="fullNodeDetailsUnlock"
         :action="unlockWarning"
         action-i18n="buttons.unlock"
@@ -38,19 +38,19 @@ import { mapState } from "vuex";
 import { required } from "vuelidate/lib/validators";
 import { full_node_key } from "src/validators/common";
 import WalletPassword from "src/mixins/wallet_password";
-import ServiceNodeDetails from "./full_node_details";
-import ServiceNodeList from "./full_node_list";
+import FullNodeDetails from "./full_node_details";
+import FullNodeList from "./full_node_list";
 
 export default {
-  name: "ServiceNodeUnlock",
+  name: "FullNodeUnlock",
   components: {
-    ServiceNodeDetails,
-    ServiceNodeList
+    FullNodeDetails,
+    FullNodeList
   },
   mixins: [WalletPassword],
   data() {
     const menuItems = [
-      { action: "copyServiceNodeKey", i18n: "menuItems.copyServiceNodeKey" },
+      { action: "copyFullNodeKey", i18n: "menuItems.copyFullNodeKey" },
       { action: "viewOnExplorer", i18n: "menuItems.viewOnExplorer" }
     ];
     return {
@@ -113,10 +113,10 @@ export default {
             // Tell the user to confirm
             this.$q
               .dialog({
-                title: this.$t("dialog.unlockServiceNode.confirmTitle"),
+                title: this.$t("dialog.unlockFullNode.confirmTitle"),
                 message,
                 ok: {
-                  label: this.$t("dialog.unlockServiceNode.ok"),
+                  label: this.$t("dialog.unlockFullNode.ok"),
                   color: "primary"
                 },
                 cancel: {
@@ -164,10 +164,10 @@ export default {
       event.stopPropagation();
       this.$q
         .dialog({
-          title: this.$t("dialog.unlockServiceNodeWarning.title"),
-          message: this.$t("dialog.unlockServiceNodeWarning.message"),
+          title: this.$t("dialog.unlockFullNodeWarning.title"),
+          message: this.$t("dialog.unlockFullNodeWarning.message"),
           ok: {
-            label: this.$t("dialog.unlockServiceNodeWarning.ok"),
+            label: this.$t("dialog.unlockFullNodeWarning.ok"),
             color: "primary"
           },
           cancel: {
@@ -189,10 +189,10 @@ export default {
       this.key = key;
 
       let passwordDialog = await this.showPasswordConfirmation({
-        title: this.$t("dialog.unlockServiceNode.title"),
-        noPasswordMessage: this.$t("dialog.unlockServiceNode.message"),
+        title: this.$t("dialog.unlockFullNode.title"),
+        noPasswordMessage: this.$t("dialog.unlockFullNode.message"),
         ok: {
-          label: this.$t("dialog.unlockServiceNode.ok"),
+          label: this.$t("dialog.unlockFullNode.ok"),
           color: "primary"
         },
         dark: this.theme == "dark",

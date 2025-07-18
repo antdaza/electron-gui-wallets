@@ -23,7 +23,7 @@ export default {
     next: "SIGUIENTE",
     openWallet: "ABRIR MONEDERO",
     receive: "RECIBIR",
-    registerServiceNode: "REGISTRAR NODO DE SERVICIO",
+    registerFullNode: "REGISTRAR NODO DE SERVICIO",
     rescan: "VOLVER A EXAMINAR",
     restoreWallet: "RESTAURAR MONEDERO",
     save: "GUARDAR",
@@ -97,7 +97,7 @@ export default {
       title: "Contraseña",
       message: "Introduzca la contraseña del monedero para continuar."
     },
-    registerServiceNode: {
+    registerFullNode: {
       title: "Registrar nodo de servicio",
       message: "¿Desea registrar el nodo de servicio?",
       ok: "REGISTRAR"
@@ -154,13 +154,13 @@ export default {
       title: "Confirmar liberación",
       ok: "LIBERAR"
     },
-    unlockServiceNode: {
+    unlockFullNode: {
       title: "Liberar nodo de servicio",
       confirmTitle: "Confirmar liberación",
       message: "¿Desea liberar el nodo de servicio?",
       ok: "LIBERAR"
     },
-    unlockServiceNodeWarning: {
+    unlockFullNodeWarning: {
       title: "Advertencia liberación nodo de servicio",
       message:
         "Liberar una participación parcial a un nodo hará que el resto de participaciones de otras personas también se liberen. Si se trata de una participación a un nodo compartido, estaría bien que comunicara sus intenciones al operador y al resto de participantes.",
@@ -237,12 +237,12 @@ export default {
     copyQR: "Copiar código QR",
     copySeedWords: "Copiar palabras semilla",
     copySpendKey: "Copiar clave de gasto",
-    copyServiceNodeKey: "Copiar clave de nodo de servicio",
+    copyFullNodeKey: "Copiar clave de nodo de servicio",
     copyTransactionId: "Copiar ID de la transacción",
     copyViewKey: "Copiar clave de visualización",
     createNewWallet: "Crear nuevo monedero",
     deleteWallet: "Eliminar monedero",
-    exit: "Cerrar la interfaz del monedero Oxen",
+    exit: "Cerrar la interfaz del monedero Antd",
     importOldGUIWallet: "Importar monedero de una interfaz gráfica antigua",
     manageKeyImages: "Administrar Imágenes de Clave",
     openWallet: "Abrir monedero",
@@ -270,7 +270,7 @@ export default {
       },
       passwordUpdated: "Contraseña actualizada",
       qrCopied: "Código QR copiado al portapapeles",
-      registerServiceNodeSuccess: "Nodo de servicio registrado correctamente",
+      registerFullNodeSuccess: "Nodo de servicio registrado correctamente",
       sendSuccess: "Transacción enviada correctamente",
       signatureCopied: "Firma copiada al portapapeles",
       stakeSuccess: "Participación retenida correctamente",
@@ -290,7 +290,7 @@ export default {
       enterTransactionProof: "Introduzca prueba de transacción",
       enterWalletName: "Introduzca un nombre para el monedero",
       errorSavingItem: "Error al guardar {item}",
-      failedServiceNodeUnlock: "La liberación del nodo de servicio ha fallado",
+      failedFullNodeUnlock: "La liberación del nodo de servicio ha fallado",
       failedToSetLanguage: "Fallo al cambiar de idioma: {lang}",
       failedWalletImport: "Fallo al importar el monedero",
       failedWalletOpen: "Fallo al abrir el monedero. Inténtelo de nuevo.",
@@ -305,9 +305,9 @@ export default {
       invalidRestoreDate: "Fecha de restauración no válida",
       invalidRestoreHeight: "Altura de bloque no válida",
       invalidSeedLength: "Cantidad de palabras en la semilla incorrecta",
-      invalidServiceNodeCommand:
+      invalidFullNodeCommand:
         "Por favor, introduzca el comando para registrar el nodo de servicio",
-      invalidServiceNodeKey: "Clave de nodo de servicio no válida",
+      invalidFullNodeKey: "Clave de nodo de servicio no válida",
       invalidWalletPath: "Ruta del monedero no válida",
       keyImages: {
         exporting: "Error exportando imágenes de clave",

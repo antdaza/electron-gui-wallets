@@ -21,21 +21,21 @@
         ]"
       />
     </div>
-    <ServiceNodeUnlock v-if="screen === 'myStakes'" />
-    <ServiceNodeStaking v-if="screen === 'staking'" />
-    <ServiceNodeRegistration v-if="screen === 'registration'" />
+    <FullNodeUnlock v-if="screen === 'myStakes'" />
+    <FullNodeStaking v-if="screen === 'staking'" />
+    <FullNodeRegistration v-if="screen === 'registration'" />
   </q-page>
 </template>
 
 <script>
-import ServiceNodeStaking from "components/full_node/full_node_staking";
-import ServiceNodeRegistration from "components/full_node/full_node_registration";
-import ServiceNodeUnlock from "components/full_node/full_node_unlock";
+import FullNodeStaking from "components/full_node/full_node_staking";
+import FullNodeRegistration from "components/full_node/full_node_registration";
+import FullNodeUnlock from "components/full_node/full_node_unlock";
 export default {
   components: {
-    ServiceNodeStaking,
-    ServiceNodeRegistration,
-    ServiceNodeUnlock
+    FullNodeStaking,
+    FullNodeRegistration,
+    FullNodeUnlock
   },
   data() {
     return {

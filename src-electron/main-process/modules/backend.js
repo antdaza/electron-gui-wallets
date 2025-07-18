@@ -50,7 +50,7 @@ export class Backend {
     if (fs.existsSync(legacyLokiConfigDir)) {
       this.config_dir = legacyLokiConfigDir;
     } else {
-      // create the new, Oxen location
+      // create the new, Antd location
       this.config_dir = configDir;
       if (!fs.existsSync(configDir)) {
         fs.mkdirpSync(configDir);

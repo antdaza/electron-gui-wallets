@@ -148,7 +148,7 @@ export class WalletRPC {
         if (!fs.existsSync(rpcPath)) {
           reject(
             new Error(
-              "Failed to find Oxen Wallet RPC. Please make sure your anti-virus has not removed it."
+              "Failed to find Antd Wallet RPC. Please make sure your anti-virus has not removed it."
             )
           );
           return;
@@ -293,7 +293,7 @@ export class WalletRPC {
         break;
 
       case "restore_view_wallet":
-        // TODO: Decide if we want this for Oxen
+        // TODO: Decide if we want this for Antd
         this.restoreViewWallet(
           params.name,
           params.password,
@@ -332,7 +332,7 @@ export class WalletRPC {
         break;
 
       case "update_full_node_list":
-        this.updateServiceNodeList();
+        this.updateFullNodeList();
         break;
 
       case "unlock_stake":
@@ -1836,7 +1836,7 @@ export class WalletRPC {
           }
 
           // Update the new snode list
-          this.backend.daemon.updateServiceNodes();
+          this.backend.daemon.updateFullNodes();
 
           this.sendGateway("set_snode_status", {
             stake: {
@@ -1898,12 +1898,12 @@ export class WalletRPC {
           }
 
           // Update the new snode list
-          this.backend.daemon.updateServiceNodes();
+          this.backend.daemon.updateFullNodes();
 
           this.sendGateway("set_snode_status", {
             registration: {
               code: 0,
-              i18n: "notification.positive.registerServiceNodeSuccess",
+              i18n: "notification.positive.registerFullNodeSuccess",
               sending: false
             }
           });
@@ -1912,8 +1912,8 @@ export class WalletRPC {
     );
   }
 
-  async updateServiceNodeList() {
-    this.backend.daemon.updateServiceNodes();
+  async updateFullNodeList() {
+    this.backend.daemon.updateFullNodes();
   }
 
   unlockStake(password, full_node_key, confirmed = false) {
@@ -1959,7 +1959,7 @@ export class WalletRPC {
             }
 
             if (!data.hasOwnProperty("result")) {
-              sendError("notification.errors.failedServiceNodeUnlock");
+              sendError("notification.errors.failedFullNodeUnlock");
               return null;
             }
 
@@ -1979,7 +1979,7 @@ export class WalletRPC {
 
             // Update the new snode list
             if (data.unlocked) {
-              this.backend.daemon.updateServiceNodes();
+              this.backend.daemon.updateFullNodes();
             }
 
             this.sendGateway("set_snode_status", { unlock });

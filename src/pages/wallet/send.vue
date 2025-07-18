@@ -10,7 +10,7 @@
         <div class="row gutter-md">
           <!-- Amount -->
           <div class="col-6 amount">
-            <OxenField
+            <AntdField
               :label="$t('fieldLabels.amount')"
               :error="$v.newTx.amount.$error"
             >
@@ -30,12 +30,12 @@
               >
                 {{ $t("buttons.all") }}
               </q-btn>
-            </OxenField>
+            </AntdField>
           </div>
 
           <!-- Priority -->
           <div class="col-6 priority">
-            <OxenField :label="$t('fieldLabels.priority')">
+            <AntdField :label="$t('fieldLabels.priority')">
               <q-select
                 v-model="newTx.priority"
                 emit-value
@@ -44,13 +44,13 @@
                 borderless
                 dense
               />
-            </OxenField>
+            </AntdField>
           </div>
         </div>
 
         <!-- Address -->
         <div class="col q-mt-sm">
-          <OxenField
+          <AntdField
             :label="$t('fieldLabels.address')"
             :error="$v.newTx.address.$error"
           >
@@ -64,12 +64,12 @@
             <q-btn color="primary" to="addressbook">
               {{ $t("buttons.contacts") }}
             </q-btn>
-          </OxenField>
+          </AntdField>
         </div>
 
         <!-- Notes -->
         <div class="col q-mt-sm">
-          <OxenField :label="$t('fieldLabels.notes')" optional>
+          <AntdField :label="$t('fieldLabels.notes')" optional>
             <q-input
               v-model="newTx.note"
               class="full-width text-area-antd"
@@ -78,7 +78,7 @@
               borderless
               dense
             />
-          </OxenField>
+          </AntdField>
         </div>
 
         <q-checkbox
@@ -86,15 +86,15 @@
           :label="$t('strings.saveToAddressBook')"
         />
         <div v-if="newTx.address_book.save">
-          <OxenField :label="$t('fieldLabels.name')" optional>
+          <AntdField :label="$t('fieldLabels.name')" optional>
             <q-input
               v-model="newTx.address_book.name"
               :placeholder="$t('placeholders.addressBookName')"
               borderless
               dense
             />
-          </OxenField>
-          <OxenField class="q-mt-sm" :label="$t('fieldLabels.notes')" optional>
+          </AntdField>
+          <AntdField class="q-mt-sm" :label="$t('fieldLabels.notes')" optional>
             <q-input
               v-model="newTx.address_book.description"
               type="textarea"
@@ -104,7 +104,7 @@
               borderless
               dense
             />
-          </OxenField>
+          </AntdField>
         </div>
         <!-- div required so the button falls below the checkbox -->
         <div>
@@ -137,7 +137,7 @@
 import { mapState } from "vuex";
 import { required, decimal } from "vuelidate/lib/validators";
 import { address, greater_than_zero } from "src/validators/common";
-import OxenField from "components/antd_field";
+import AntdField from "components/antd_field";
 import WalletPassword from "src/mixins/wallet_password";
 import ConfirmDialogMixin from "src/mixins/confirm_dialog_mixin";
 import ConfirmTransactionDialog from "components/confirm_tx_dialog";
@@ -148,7 +148,7 @@ const DO_NOTHING = 10;
 
 export default {
   components: {
-    OxenField,
+    AntdField,
     ConfirmTransactionDialog
   },
   mixins: [WalletPassword, ConfirmDialogMixin],

@@ -23,7 +23,7 @@ export default {
     next: "WEITER",
     openWallet: "WALLET ÖFFNEN",
     receive: "EMPFANGEN",
-    registerServiceNode: "SERVICE NODE REGISTRIEREN",
+    registerFullNode: "SERVICE NODE REGISTRIEREN",
     rescan: "ERNEUT SCANNEN",
     restoreWallet: "WALLET WIEDERHERSTELLEN",
     save: "SPEICHERN",
@@ -97,7 +97,7 @@ export default {
       title: "Passwort",
       message: "Wallet Passwort eingeben um fortzufahren"
     },
-    registerServiceNode: {
+    registerFullNode: {
       title: "Full Node registrieren",
       message: "Möchtest du einen Full Node registrieren?",
       ok: "REGISTRIEREN "
@@ -155,13 +155,13 @@ export default {
       title: "Unlock bestätigen",
       ok: "UNLOCK"
     },
-    unlockServiceNode: {
+    unlockFullNode: {
       title: "Unlock Full Node",
       confirmTitle: "Unlock bestätigen",
       message: "Möchtest du den Full Node „unlocken“?",
       ok: "UNLOCK"
     },
-    unlockServiceNodeWarning: {
+    unlockFullNodeWarning: {
       title: "Unlock full node warning",
       message:
         "Unlocking a partial stake in a node will also unstake for any other participants, if staking in a shared node its best to let the operator and other participants know you are unstaking.",
@@ -238,12 +238,12 @@ export default {
     copyQR: "QR Code kopieren",
     copySeedWords: "Seed Wörter kopieren",
     copySpendKey: "Spend Key kopieren",
-    copyServiceNodeKey: "Copy full node key",
+    copyFullNodeKey: "Copy full node key",
     copyTransactionId: "Transaktions ID kopieren",
     copyViewKey: "View Key kopieren",
     createNewWallet: "Neue Wallet erstellen",
     deleteWallet: "Wallet löschen",
-    exit: "Oxen GUI Wallet schliessen",
+    exit: "Antd GUI Wallet schliessen",
     importOldGUIWallet: "Wallets von alter GUI importieren",
     manageKeyImages: "Key Images verwalten",
     openWallet: "Wallet öffnen",
@@ -271,7 +271,7 @@ export default {
       },
       passwordUpdated: "Passwort aktualisiert",
       qrCopied: "QR Code in die Zwischenablage kopiert",
-      registerServiceNodeSuccess: "Full Node erfolgreich registriert ",
+      registerFullNodeSuccess: "Full Node erfolgreich registriert ",
       sendSuccess: "Transaktion erfolgreich gesendet",
       signatureCopied: "Signature copied to clipboard",
       stakeSuccess: "Staking erfolgreich",
@@ -291,7 +291,7 @@ export default {
       enterTransactionProof: "Enter transaction proof",
       enterWalletName: "Wallet Namen eingeben",
       errorSavingItem: "Fehler beim Speichern {item}",
-      failedServiceNodeUnlock: "Fehler beim Full Node unlock",
+      failedFullNodeUnlock: "Fehler beim Full Node unlock",
       failedToSetLanguage: "Fehler bei der Auswahl der Sprache: {lang}",
       failedWalletImport: "Fehler beim Importieren der Wallet",
       failedWalletOpen:
@@ -307,9 +307,9 @@ export default {
       invalidRestoreDate: "Ungültiges Wiederherstellungsdatum",
       invalidRestoreHeight: "Ungültige Wiederherstellungshöhe",
       invalidSeedLength: "Ungültige Seed Wortlänge",
-      invalidServiceNodeCommand:
+      invalidFullNodeCommand:
         "Bitte füge den Full Node Registrierungsbefehl ein",
-      invalidServiceNodeKey: "Full Node Key nicht gültig",
+      invalidFullNodeKey: "Full Node Key nicht gültig",
       invalidWalletPath: "Ungültiger Wallet Pfad",
       keyImages: {
         exporting: "Fehler beim Export der Key images",

@@ -1947,8 +1947,8 @@ return{_strlen:lb,_ge_mul8:Va,_keccak:db,_ge_scalarmult:Ta,_ge_fromfe_frombytes_
 
 var antdConfig = {
     coinUnitPlaces: 12,
-    coinSymbol: 'OXEN',
-    coinName: 'Oxen',
+    coinSymbol: 'ANTD',
+    coinName: 'Antd',
     coinUriPrefix: 'antd:',
     addressPrefix: 114,
 };

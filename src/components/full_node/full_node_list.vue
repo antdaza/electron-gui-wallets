@@ -16,7 +16,7 @@
               <span v-if="getRole(node)">{{ getRole(node) }} •</span>
               <span>
                 {{ $t("strings.contribution") }}:
-                <FormatOxen :amount="node.ourContributionAmount" />
+                <FormatAntd :amount="node.ourContributionAmount" />
               </span>
             </span>
             <!-- you only have a contribution amount of 0 if you are a "contributor"
@@ -30,9 +30,9 @@
             </span>
             <span v-if="node.awaitingContribution" class="contrib-amounts">
               {{ $t("strings.fullNodeDetails.minContribution") }}:
-              {{ getMinContribution(node, our_address) }} OXEN •
+              {{ getMinContribution(node, our_address) }} ANTD •
               {{ $t("strings.fullNodeDetails.maxContribution") }}:
-              {{ openForContributionOxen(node, our_address) }} OXEN
+              {{ openForContributionAntd(node, our_address) }} ANTD
             </span>
           </q-item-label>
         </q-item-section>
@@ -60,7 +60,7 @@
         <ContextMenu
           :menu-items="menuItems"
           @viewOnExplorer="openExplorer(node.full_node_pubkey)"
-          @copyServiceNodeKey="copyKey(node.full_node_pubkey)"
+          @copyFullNodeKey="copyKey(node.full_node_pubkey)"
         />
       </q-item>
     </q-list>
@@ -70,17 +70,17 @@
 <script>
 import { clipboard } from "electron";
 import ContextMenu from "components/menus/contextmenu";
-import FormatOxen from "components/format_antd";
-import ServiceNodeMixin from "src/mixins/full_node_mixin";
+import FormatAntd from "components/format_antd";
+import FullNodeMixin from "src/mixins/full_node_mixin";
 import { mapState } from "vuex";
 
 export default {
-  name: "ServiceNodeList",
+  name: "FullNodeList",
   components: {
     ContextMenu,
-    FormatOxen
+    FormatAntd
   },
-  mixins: [ServiceNodeMixin],
+  mixins: [FullNodeMixin],
   props: {
     fullNodes: {
       type: Array,
@@ -101,7 +101,7 @@ export default {
   },
   data() {
     const menuItems = [
-      { action: "copyServiceNodeKey", i18n: "menuItems.copyServiceNodeKey" },
+      { action: "copyFullNodeKey", i18n: "menuItems.copyFullNodeKey" },
       { action: "viewOnExplorer", i18n: "menuItems.viewOnExplorer" }
     ];
     return {

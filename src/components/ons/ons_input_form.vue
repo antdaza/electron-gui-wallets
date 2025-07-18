@@ -2,7 +2,7 @@
   <div class="ons-input-form">
     <!-- Type -->
     <div class="col q-mt-sm">
-      <OxenField :label="$t('fieldLabels.onsType')" :disable="updating">
+      <AntdField :label="$t('fieldLabels.onsType')" :disable="updating">
         <q-select
           v-model.trim="record.type"
           emit-value
@@ -12,11 +12,11 @@
           borderless
           dense
         />
-      </OxenField>
+      </AntdField>
     </div>
     <!-- Name -->
     <div class="col q-mt-sm">
-      <OxenField
+      <AntdField
         :label="$t('fieldLabels.name')"
         :disable="disableName"
         :error="$v.record.name.$error"
@@ -33,12 +33,12 @@
           "
           @blur="$v.record.name.$touch"
         />
-      </OxenField>
+      </AntdField>
     </div>
 
     <!-- Value (Session ID, Wallet Address or .loki address) -->
     <div class="col q-mt-sm">
-      <OxenField
+      <AntdField
         class="q-mt-md"
         :label="value_field_label"
         :error="$v.record.value.$error"
@@ -55,12 +55,12 @@
           "
           @blur="$v.record.value.$touch"
         />
-      </OxenField>
+      </AntdField>
     </div>
 
     <!-- Owner -->
     <div class="col q-mt-sm">
-      <OxenField
+      <AntdField
         class="q-mt-md"
         :label="$t('fieldLabels.owner')"
         :error="$v.record.owner.$error"
@@ -75,12 +75,12 @@
           :disable="renewing"
           @blur="$v.record.owner.$touch"
         />
-      </OxenField>
+      </AntdField>
     </div>
 
     <!-- Backup owner -->
     <div class="col q-mt-sm">
-      <OxenField
+      <AntdField
         class="q-mt-md"
         :label="$t('fieldLabels.backupOwner')"
         :error="$v.record.backup_owner.$error"
@@ -95,7 +95,7 @@
           dense
           @blur="$v.record.backup_owner.$touch"
         />
-      </OxenField>
+      </AntdField>
     </div>
     <div class="buttons">
       <q-btn
@@ -123,13 +123,13 @@ import {
   lokinet_name,
   session_name
 } from "src/validators/common";
-import OxenField from "components/antd_field";
+import AntdField from "components/antd_field";
 import WalletPassword from "src/mixins/wallet_password";
 
 export default {
   name: "ONSInputForm",
   components: {
-    OxenField
+    AntdField
   },
   mixins: [WalletPassword],
   props: {

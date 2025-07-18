@@ -38,7 +38,7 @@
                       <span>{{ $t("strings.antdBalance") }}</span>
                     </div>
                     <div class="value">
-                      <span><FormatOxen :amount="address.balance"/></span>
+                      <span><FormatAntd :amount="address.balance"/></span>
                     </div>
                   </div>
                 </div>
@@ -50,7 +50,7 @@
                     </div>
                     <div class="value">
                       <span
-                        ><FormatOxen :amount="address.unlocked_balance"
+                        ><FormatAntd :amount="address.unlocked_balance"
                       /></span>
                     </div>
                   </div>
@@ -162,7 +162,7 @@
 import { mapState } from "vuex";
 const { clipboard, nativeImage } = require("electron");
 import AddressHeader from "components/address_header";
-import FormatOxen from "components/format_antd";
+import FormatAntd from "components/format_antd";
 import QrcodeVue from "qrcode.vue";
 import TxList from "components/tx_list";
 export default {
@@ -170,7 +170,7 @@ export default {
   components: {
     AddressHeader,
     TxList,
-    FormatOxen,
+    FormatAntd,
     QrcodeVue
   },
   data() {

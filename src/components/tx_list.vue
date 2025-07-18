@@ -26,7 +26,7 @@
             </q-item-section>
             <q-item-label class="main">
               <q-item-label class="amount">
-                <FormatOxen :amount="tx.amount || 0" />
+                <FormatAntd :amount="tx.amount || 0" />
               </q-item-label>
               <q-item-label caption>{{ tx.txid }}</q-item-label>
             </q-item-label>
@@ -61,7 +61,7 @@ const { clipboard } = require("electron");
 import { mapState } from "vuex";
 import { QSpinnerDots } from "quasar";
 import TxDetails from "components/tx_details";
-import FormatOxen from "components/format_antd";
+import FormatAntd from "components/format_antd";
 import { i18n } from "boot/i18n";
 import ContextMenu from "components/menus/contextmenu";
 
@@ -95,7 +95,7 @@ export default {
   components: {
     QSpinnerDots,
     TxDetails,
-    FormatOxen,
+    FormatAntd,
     ContextMenu
   },
   props: {

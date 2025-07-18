@@ -157,8 +157,8 @@ module.exports = function() {
         // https://www.electron.build/configuration/configuration
 
         appId: "com.antd.electron-wallet",
-        productName: "Oxen Electron Wallet",
-        copyright: "Copyright © 2018-2022 Oxen, 2018 Ryo Currency Project",
+        productName: "Antd Electron Wallet",
+        copyright: "Copyright © 2018-2022 Antd, 2018 Ryo Currency Project",
         afterSign: "build/notarize.js",
         artifactName: "antd-electron-wallet-${version}-${os}.${ext}",
         publish: "github",

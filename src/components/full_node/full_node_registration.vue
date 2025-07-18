@@ -3,34 +3,34 @@
 
     <div class="q-pa-md">
       <i18n
-        path="strings.serviceNodeRegistrationDescription"
+        path="strings.fullNodeRegistrationDescription"
         tag="div"
         class="tab-desc q-mb-lg"
       >
-        <b place="registerCommand">register_service_node</b>
+        <b place="registerCommand">register_full_node</b>
         <b place="prepareCommand">prepare_registration</b>
       </i18n>
-      <OxenField
-        :label="$t('fieldLabels.serviceNodeCommand')"
+      <AntdField
+        :label="$t('fieldLabels.fullNodeCommand')"
         :error="$v.registration_string.$error"
         :disabled="registration_status.sending"
       >
         <q-input
           v-model.trim="registration_string"
           type="textarea"
-          class="full-width text-area-oxen"
-          placeholder="register_service_node ..."
+          class="full-width text-area-antd"
+          placeholder="register_full_node ..."
           :disabled="registration_status.sending"
           borderless
           dense
           @blur="$v.registration_string.$touch"
           @paste="onPaste"
         />
-      </OxenField>
+      </AntdField>
       <q-btn
         class="register-button"
         color="primary"
-        :label="$t('buttons.registerServiceNode')"
+        :label="$t('buttons.registerFullNode')"
         :disabled="registration_status.sending"
         @click="register()"
       />
@@ -44,13 +44,13 @@
 <script>
 import { mapState } from "vuex";
 import { required } from "vuelidate/lib/validators";
-import OxenField from "components/oxen_field";
+import AntdField from "components/antd_field";
 import WalletPassword from "src/mixins/wallet_password";
 
 export default {
-  name: "ServiceNodeRegistration",
+  name: "FullNodeRegistration",
   components: {
-    OxenField
+    AntdField
   },
   mixins: [WalletPassword],
   data() {
@@ -100,16 +100,16 @@ export default {
         this.$q.notify({
           type: "negative",
           timeout: 1000,
-          message: this.$t("notification.errors.invalidServiceNodeCommand")
+          message: this.$t("notification.errors.invalidFullNodeCommand")
         });
         return;
       }
 
       let passwordDialog = await this.showPasswordConfirmation({
-        title: this.$t("dialog.registerServiceNode.title"),
-        noPasswordMessage: this.$t("dialog.registerServiceNode.message"),
+        title: this.$t("dialog.registerFullNode.title"),
+        noPasswordMessage: this.$t("dialog.registerFullNode.message"),
         ok: {
-          label: this.$t("dialog.registerServiceNode.ok"),
+          label: this.$t("dialog.registerFullNode.ok"),
           color: "primary"
         },
         dark: this.theme == "dark",

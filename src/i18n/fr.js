@@ -23,7 +23,7 @@ export default {
     next: "SUIVANT",
     openWallet: "OUVRIR LE PORTEFEUILLE",
     receive: "RECEVOIR",
-    registerServiceNode: "ENREGISTRER UN NOEUD DE SERVICE",
+    registerFullNode: "ENREGISTRER UN NOEUD DE SERVICE",
     rescan: "RÉANALYSER",
     restoreWallet: "RESTAURER LE PORTEFEUILLE",
     save: "SAUVEGARDER",
@@ -98,9 +98,9 @@ export default {
       title: "Mot de passe",
       message: "Entrez le mot de passe du portefeuille pour continuer."
     },
-    registerServiceNode: {
-      title: "Enregistrer le nœud de service",
-      message: "Voulez-vous enregistrer le nœud de service ?",
+    registerFullNode: {
+      title: "Enregistrer le nœud de full",
+      message: "Voulez-vous enregistrer le nœud de full ?",
       ok: "ENREGISTRER"
     },
     rescan: {
@@ -155,13 +155,13 @@ export default {
       title: "Confirmer le déverrouillage",
       ok: "DÉVERROUILLER"
     },
-    unlockServiceNode: {
-      title: "Déverrouiller le nœud de service",
+    unlockFullNode: {
+      title: "Déverrouiller le nœud de full",
       confirmTitle: "Confirmer le déverrouillage",
-      message: "Voulez-vous déverrouiller le nœud de service ?",
+      message: "Voulez-vous déverrouiller le nœud de full ?",
       ok: "DÉVERROUILLER"
     },
-    unlockServiceNodeWarning: {
+    unlockFullNodeWarning: {
       title: "Unlock full node warning",
       message:
         "Unlocking a partial stake in a node will also unstake for any other participants, if staking in a shared node its best to let the operator and other participants know you are unstaking.",
@@ -239,12 +239,12 @@ export default {
     copyQR: "Copier le QR code",
     copySeedWords: "Copier les mots clés",
     copySpendKey: "Copier la clé de dépense",
-    copyServiceNodeKey: "Copy full node key",
+    copyFullNodeKey: "Copy full node key",
     copyTransactionId: "Copier l'ID de transaction",
     copyViewKey: "Copier la clé de visibilité",
     createNewWallet: "Créer un nouveau portefeuille",
     deleteWallet: "Supprimer le portefeuille",
-    exit: "Quitter le portefeuille Oxen GUI",
+    exit: "Quitter le portefeuille Antd GUI",
     importOldGUIWallet: "Importer le portefeuille depuis l’ancien GUI",
     manageKeyImages: "Gérer les images clés",
     openWallet: "Ouvrir le portefeuille",
@@ -272,7 +272,7 @@ export default {
       },
       passwordUpdated: "Mot de passe mis à jour",
       qrCopied: "QR code copié dans le presse-papier",
-      registerServiceNodeSuccess: "Nœud de service enregistré avec succès",
+      registerFullNodeSuccess: "Nœud de service enregistré avec succès",
       sendSuccess: "Transaction envoyée avec succès",
       signatureCopied: "Signature copied to clipboard",
       stakeSuccess: "Mise placée avec succès",
@@ -292,7 +292,7 @@ export default {
       enterTransactionProof: "Enter transaction proof",
       enterWalletName: "Entrez un nom de portefeuille",
       errorSavingItem: "Erreur de sauvegarde {item}",
-      failedServiceNodeUnlock: "Erreur de déverrouillage du nœud de service",
+      failedFullNodeUnlock: "Erreur de déverrouillage du nœud de full",
       failedToSetLanguage: "Impossible de définir la langue : {lang}",
       failedWalletImport: "Echec d'import du portefeuille",
       failedWalletOpen:
@@ -308,9 +308,9 @@ export default {
       invalidRestoreDate: "Date de restauration non valide",
       invalidRestoreHeight: "Hauteur de restauration non valide",
       invalidSeedLength: "Longueur de mot clé non valide",
-      invalidServiceNodeCommand:
-        "Veuillez entrer la commande d'inscription d'un nœud de service",
-      invalidServiceNodeKey: "Clé du nœud de service non valide",
+      invalidFullNodeCommand:
+        "Veuillez entrer la commande d'inscription d'un nœud de full",
+      invalidFullNodeKey: "Clé du nœud de full non valide",
       invalidWalletPath: "Chemin du portefeuille non valide",
       keyImages: {
         exporting: "Erreur de l'exportation des clés images",
@@ -464,7 +464,7 @@ export default {
         pendingIncoming: "Entrantes en attente",
         pendingOutgoing: "Sortantes en attente",
         miner: "Miner",
-        fullNode: "Noeud de service",
+        fullNode: "Noeud de full",
         governance: "Gouvernance",
         stake: "Stake",
         failed: "Echouées"

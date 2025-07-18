@@ -1,15 +1,15 @@
-# Oxen Electron GUI Wallet
+# Antd Electron GUI Wallet
 
 ### Introduction
 
-Oxen (formerly Loki) is a private cryptocurrency based on Monero. Oxen aims to provide a private data transmission layer using a second layer of Full Nodes.
-More information on the project can be found on the [website](https://antd.io) and in the [whitepaper](https://loki.network/whitepaper). Oxen is an open source project, and we encourage contributions from anyone with something to offer.
+Antd (formerly Loki) is a private cryptocurrency based on Monero. Antd aims to provide a private data transmission layer using a second layer of Full Nodes.
+More information on the project can be found on the [website](https://antd.io) and in the [whitepaper](https://loki.network/whitepaper). Antd is an open source project, and we encourage contributions from anyone with something to offer.
 
-![Oxen wallet image](./src-electron/icons/mrcuug.PNG)
+![Antd wallet image](./src-electron/icons/mrcuug.PNG)
 
 ### About this project
 
-This is the new Electron GUI for Oxen. It is open source and completely free to use without restrictions, anyone may create an alternative implementation of the Oxen Electron GUI that uses the protocol and network in a compatible manner.
+This is the new Electron GUI for Antd. It is open source and completely free to use without restrictions, anyone may create an alternative implementation of the Antd Electron GUI that uses the protocol and network in a compatible manner.
 
 Please submit any changes as pull requests to the development branch, all changes are assessed in the development branch before being merged to master, release tags are considered stable builds for the GUI.
 

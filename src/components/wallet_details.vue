@@ -25,19 +25,19 @@
               ]"
             />
             <div class="value">
-              <span><FormatOxen :amount="info.balance"/></span>
+              <span><FormatAntd :amount="info.balance"/></span>
             </div>
           </div>
           <div v-if="balancestakeselector != 'stake'" class="row unlocked">
             <span
               >{{ $t("strings.antdUnlockedShort") }}:
-              <FormatOxen :amount="info.unlocked_balance"
+              <FormatAntd :amount="info.unlocked_balance"
             /></span>
           </div>
           <div v-if="balancestakeselector == 'stake'" class="row unlocked">
             <span v-if="info.accrued_balance > 0"
               >{{ $t("strings.antdAccumulatedRewards") }}:
-              <FormatOxen :amount="info.accrued_balance" />•
+              <FormatAntd :amount="info.accrued_balance" />•
               {{ $t("strings.nextPayout") }}:
               <FormatNextPayout
                 :payout-block="info.accrued_balance_next_payout"
@@ -60,14 +60,14 @@
 
 <script>
 import { mapState } from "vuex";
-import FormatOxen from "components/format_antd";
+import FormatAntd from "components/format_antd";
 import FormatNextPayout from "components/format_next_payout";
 import WalletSettings from "components/menus/wallet_settings";
 import CopyIcon from "components/icons/copy_icon";
 export default {
   name: "WalletDetails",
   components: {
-    FormatOxen,
+    FormatAntd,
     FormatNextPayout,
     WalletSettings,
     CopyIcon

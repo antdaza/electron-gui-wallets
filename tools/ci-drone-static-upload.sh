@@ -23,7 +23,7 @@ branch_or_tag=${DRONE_BRANCH:-${DRONE_TAG:-unknown}}
 
 upload_to="antd.rocks/${DRONE_REPO// /_}/${branch_or_tag// /_}"
 
-MACOS_APP=${MACOS_APP:-"dist/electron/Packaged/mac/Oxen Electron Wallet.app"}
+MACOS_APP=${MACOS_APP:-"dist/electron/Packaged/mac/Antd Electron Wallet.app"}
 if [ "$(uname -s)" == "Darwin" ]; then
     if codesign -v "$MACOS_APP"; then
         echo -e "\e[32;1mApp is codesigned!"

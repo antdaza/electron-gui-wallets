@@ -17,7 +17,7 @@
 
 <script>
 export default {
-  name: "OxenField",
+  name: "AntdField",
   props: {
     label: {
       type: String,
@@ -92,7 +92,7 @@ export default {
       margin: 0;
 
       * {
-        // Oxen navy, can't use vars here :(
+        // Antd navy, can't use vars here :(
         color: #1f1c47;
       }
     }

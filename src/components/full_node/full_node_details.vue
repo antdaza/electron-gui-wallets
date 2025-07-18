@@ -40,7 +40,7 @@
                 </div>
                 <div class="value">
                   <span
-                    ><FormatOxen :amount="node.staking_requirement" raw-value
+                    ><FormatAntd :amount="node.staking_requirement" raw-value
                   /></span>
                 </div>
               </div>
@@ -54,7 +54,7 @@
                 </div>
                 <div class="value">
                   <span
-                    ><FormatOxen :amount="node.total_contributed" raw-value
+                    ><FormatAntd :amount="node.total_contributed" raw-value
                   /></span>
                 </div>
               </div>
@@ -150,7 +150,7 @@
                     >{{ $t("strings.operator") }} •
                   </span>
                   {{ $t("strings.contribution") }}:
-                  <FormatOxen :amount="contributor.amount" raw-value />
+                  <FormatAntd :amount="contributor.amount" raw-value />
                 </q-item-label>
               </q-item-label>
               <ContextMenu
@@ -175,12 +175,12 @@
 const { clipboard } = require("electron");
 import { mapState } from "vuex";
 import { date } from "quasar";
-import FormatOxen from "components/format_antd";
+import FormatAntd from "components/format_antd";
 import ContextMenu from "components/menus/contextmenu";
 export default {
-  name: "ServiceNodeDetails",
+  name: "FullNodeDetails",
   components: {
-    FormatOxen,
+    FormatAntd,
     ContextMenu
   },
   props: {

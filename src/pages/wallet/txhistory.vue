@@ -5,16 +5,16 @@
         {{ $t("titles.transactions") }}
       </div>
 
-      <OxenField class="col-5 q-px-sm" :label="$t('fieldLabels.filter')">
+      <AntdField class="col-5 q-px-sm" :label="$t('fieldLabels.filter')">
         <q-input
           v-model="tx_filter"
           :placeholder="$t('placeholders.filterTx')"
           borderless
           dense
         />
-      </OxenField>
+      </AntdField>
 
-      <OxenField class="col-2" :label="$t('fieldLabels.filterTransactionType')">
+      <AntdField class="col-2" :label="$t('fieldLabels.filterTransactionType')">
         <q-select
           v-model="tx_type"
           :options="tx_type_options"
@@ -23,7 +23,7 @@
           emit-value
           map-options
         />
-      </OxenField>
+      </AntdField>
     </div>
     <TxList :type="tx_type" :filter="tx_filter" />
   </q-page>
@@ -32,11 +32,11 @@
 <script>
 import { mapState } from "vuex";
 import TxList from "components/tx_list";
-import OxenField from "components/antd_field";
+import AntdField from "components/antd_field";
 export default {
   components: {
     TxList,
-    OxenField
+    AntdField
   },
   data() {
     return {

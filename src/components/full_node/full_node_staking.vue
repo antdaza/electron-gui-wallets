@@ -2,33 +2,33 @@
   <div class="full-node-staking">
     <div class="q-px-xl q-pt-md">
       <p class="tab-desc">
-        {{ $t("strings.serviceNodeContributionDescription") }}
+        {{ $t("strings.fullNodeContributionDescription") }}
         <span
           style="cursor: pointer; text-decoration: underline;"
           @click="antdWebsite"
-          >Oxen {{ $t("strings.website") }}.</span
+          >Antd {{ $t("strings.website") }}.</span
         >
       </p>
-      <OxenField
-        :label="$t('fieldLabels.serviceNodeKey')"
-        :error="$v.service_node.key.$error"
+      <AntdField
+        :label="$t('fieldLabels.fullNodeKey')"
+        :error="$v.full_node.key.$error"
       >
         <q-input
-          v-model.trim="service_node.key"
+          v-model.trim="full_node.key"
           :dark="theme == 'dark'"
           :placeholder="$t('placeholders.hexCharacters', { count: 64 })"
           borderless
           dense
-          @blur="$v.service_node.key.$touch"
+          @blur="$v.full_node.key.$touch"
         />
-      </OxenField>
-      <OxenField
+      </AntdField>
+      <AntdField
         :label="$t('fieldLabels.amount')"
         class="q-mt-md"
-        :error="$v.service_node.amount.$error"
+        :error="$v.full_node.amount.$error"
       >
         <q-input
-          v-model.trim="service_node.amount"
+          v-model.trim="full_node.amount"
           :dark="theme == 'dark'"
           type="number"
           min="0"
@@ -36,23 +36,23 @@
           placeholder="0"
           borderless
           dense
-          @blur="$v.service_node.amount.$touch"
+          @blur="$v.full_node.amount.$touch"
         />
         <q-btn
           color="primary"
           :text-color="theme == 'dark' ? 'white' : 'dark'"
           :label="$t('buttons.min')"
           :disable="!areButtonsEnabled()"
-          @click="service_node.amount = minStake(service_node.key)"
+          @click="full_node.amount = minStake(full_node.key)"
         />
         <q-btn
           color="primary"
           :text-color="theme == 'dark' ? 'white' : 'dark'"
           :label="$t('buttons.max')"
           :disable="!areButtonsEnabled()"
-          @click="service_node.amount = maxStake(service_node.key)"
+          @click="full_node.amount = maxStake(full_node.key)"
         />
-      </OxenField>
+      </AntdField>
       <div class="submit-button">
         <q-btn
           :disable="!is_able_to_send"
@@ -68,8 +68,8 @@
         />
       </div>
     </div>
-   <ServiceNodeContribute
-      :awaiting-service-nodes="awaiting_service_nodes"
+   <FullNodeContribute
+      :awaiting-full-nodes="awaiting_full_nodes"
       class="contribute"
       @contribute="fillStakingFields"
     />
@@ -95,22 +95,22 @@ const objectAssignDeep = require("object-assign-deep");
 import { mapState } from "vuex";
 import { required, decimal } from "vuelidate/lib/validators";
 import { full_node_key, greater_than_zero } from "src/validators/common";
-import OxenField from "components/oxen_field";
+import AntdField from "components/antd_field";
 import WalletPassword from "src/mixins/wallet_password";
 import ConfirmDialogMixin from "src/mixins/confirm_dialog_mixin";
-import ServiceNodeContribute from "./service_node_contribute";
-import ServiceNodeMixin from "src/mixins/full_node_mixin";
+import FullNodeContribute from "./full_node_contribute";
+import FullNodeMixin from "src/mixins/full_node_mixin";
 
 const DO_NOTHING = 10;
 
 export default {
-  name: "ServiceNodeStaking",
+  name: "FullNodeStaking",
   components: {
-    OxenField,
-    ServiceNodeContribute,
+    AntdField,
+    FullNodeContribute,
     ConfirmTransactionDialog
   },
-  mixins: [WalletPassword, ConfirmDialogMixin, ServiceNodeMixin],
+  mixins: [WalletPassword, ConfirmDialogMixin, FullNodeMixin],
   data() {
     return {
       full_node: {
@@ -298,7 +298,7 @@ export default {
     },
     maxStake() {
       const node = this.getNodeWithPubKey();
-      return this.openForContributionOxen(node, this.award_address);
+      return this.openForContributionAntd(node, this.award_address);
     },
     getFeeDecimal(node) {
       const operatorPortion = node.portions_for_operator;
@@ -313,7 +313,7 @@ export default {
         this.$q.notify({
           type: "negative",
           timeout: 1000,
-          message: this.$t("notification.errors.invalidServiceNodeKey")
+          message: this.$t("notification.errors.invalidFullNodeKey")
         });
         return;
       } else {
@@ -417,7 +417,7 @@ export default {
         this.$q.notify({
           type: "negative",
           timeout: 1000,
-          message: this.$t("notification.errors.invalidServiceNodeKey")
+          message: this.$t("notification.errors.invalidFullNodeKey")
         });
         return;
       }

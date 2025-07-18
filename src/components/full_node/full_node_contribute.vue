@@ -10,22 +10,22 @@
             class="float-right vertical-top"
             icon="refresh"
             flat
-            @click="updateServiceNodeList"
+            @click="updateFullNodeList"
           />
         </div>
       </div>
-      <div v-if="awaitingServiceNodes.length > 0">
-        <ServiceNodeList
-          v-if="awaitingServiceNodes"
-          :full-nodes="awaitingServiceNodes"
+      <div v-if="awaitingFullNodes.length > 0">
+        <FullNodeList
+          v-if="awaitingFullNodes"
+          :full-nodes="awaitingFullNodes"
           button-i18n="buttons.stake"
           :details="details"
           :action="contributeToNode"
         />
       </div>
-      <div v-else>{{ $t("strings.noServiceNodesCurrentlyAvailable") }}</div>
+      <div v-else>{{ $t("strings.noFullNodesCurrentlyAvailable") }}</div>
     </div>
-    <ServiceNodeDetails
+    <FullNodeDetails
       ref="fullNodeDetailsContribute"
       :action="contributeToNode"
       action-i18n="buttons.stake"
@@ -38,16 +38,16 @@
 
 <script>
 import { mapState } from "vuex";
-import ServiceNodeList from "./full_node_list";
-import ServiceNodeDetails from "./full_node_details";
+import FullNodeList from "./full_node_list";
+import FullNodeDetails from "./full_node_details";
 export default {
-  name: "ServiceNodeContribute",
+  name: "FullNodeContribute",
   components: {
-    ServiceNodeList,
-    ServiceNodeDetails
+    FullNodeList,
+    FullNodeDetails
   },
   props: {
-    awaitingServiceNodes: {
+    awaitingFullNodes: {
       type: Array,
       required: true
     }
@@ -79,7 +79,7 @@ export default {
       this.$refs.fullNodeDetailsContribute.isVisible = true;
       this.$refs.fullNodeDetailsContribute.node = node;
     },
-    updateServiceNodeList() {
+    updateFullNodeList() {
       this.$gateway.send("wallet", "update_full_node_list");
     }
   }

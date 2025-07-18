@@ -1,7 +1,7 @@
 <template>
   <q-page>
     <div class="q-mx-md import-wallet">
-      <OxenField
+      <AntdField
         :label="$t('fieldLabels.newWalletName')"
         :error="$v.wallet.name.$error"
       >
@@ -14,9 +14,9 @@
           @keyup.enter="import_wallet"
           @blur="$v.wallet.name.$touch"
         />
-      </OxenField>
+      </AntdField>
 
-      <OxenField
+      <AntdField
         :label="$t('fieldLabels.walletFile')"
         disable-hover
         :error="$v.wallet.path.$error"
@@ -42,9 +42,9 @@
           :text-color="theme == 'dark' ? 'white' : 'dark'"
           @click="selectFile"
         />
-      </OxenField>
+      </AntdField>
 
-      <OxenField :label="$t('fieldLabels.password')">
+      <AntdField :label="$t('fieldLabels.password')">
         <q-input
           v-model="wallet.password"
           :placeholder="$t('placeholders.walletPassword')"
@@ -54,9 +54,9 @@
           dense
           @keyup.enter="import_wallet"
         />
-      </OxenField>
+      </AntdField>
 
-      <OxenField :label="$t('fieldLabels.confirmPassword')">
+      <AntdField :label="$t('fieldLabels.confirmPassword')">
         <q-input
           v-model="wallet.password_confirm"
           type="password"
@@ -65,7 +65,7 @@
           dense
           @keyup.enter="import_wallet"
         />
-      </OxenField>
+      </AntdField>
       <q-btn
         class="submit-button"
         color="primary"
@@ -79,10 +79,10 @@
 <script>
 import { required } from "vuelidate/lib/validators";
 import { mapState } from "vuex";
-import OxenField from "components/antd_field";
+import AntdField from "components/antd_field";
 export default {
   components: {
-    OxenField
+    AntdField
   },
   data() {
     return {
